@@ -1,0 +1,8 @@
+H:\+Repositories\SharpTools\bin\Debug\SharpTools.exe.config
+H:\+Repositories\SharpTools\bin\Debug\SharpTools.exe
+H:\+Repositories\SharpTools\bin\Debug\SharpTools.pdb
+H:\+Repositories\SharpTools\obj\Debug\SharpTools.csproj.AssemblyReference.cache
+H:\+Repositories\SharpTools\obj\Debug\SharpTools.csproj.SuggestedBindingRedirects.cache
+H:\+Repositories\SharpTools\obj\Debug\SharpTools.csproj.CoreCompileInputs.cache
+H:\+Repositories\SharpTools\obj\Debug\SharpTools.exe
+H:\+Repositories\SharpTools\obj\Debug\SharpTools.pdb
