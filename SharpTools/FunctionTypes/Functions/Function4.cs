@@ -1,10 +1,20 @@
 ﻿namespace DerRobert28.SharpTools.FunctionTypes.Functions {
 
+	using System;
+
 	public class Function4<T1, T2, T3, T4, R> {
+	
+		//
+		//	PRIVATE ELEMENTS:
+		//
 
 		public delegate R Delegate(T1 t1, T2 t2, T3 t3, T4 t4);
 		private readonly Delegate function;
-
+		
+		//
+		//	PUBLIC METHODS:
+		//
+		
 		public static Function4<T1, T2, T3, T4, R> of(Delegate function)
 			=> new Function4<T1, T2, T3, T4, R>(function);
 
@@ -24,6 +34,13 @@
 
 		public R apply(T1 t1, T2 t2, T3 t3, T4 t4)
 			=> function.Invoke(t1, t2, t3, t4);
+		
+		public static explicit operator Function4<T1, T2, T3, T4, R>
+			(Func<T1, T2, T3, T4, R> function) => of(new Delegate(function));
+
+		//
+		//	PRIVATE CONSTRUCTOR:
+		//
 
 		private Function4(Delegate function) => this.function = function;
 
