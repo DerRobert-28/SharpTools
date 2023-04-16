@@ -8,6 +8,7 @@
 		public static Function1<T, R> of(Delegate function) => new Function1<T, R>(function);
 
 		public Function1<T, R> apply() => this;
+
 		public R apply(T value) => function.Invoke(value);
 
 		private Function1(Delegate function) => this.function = function;

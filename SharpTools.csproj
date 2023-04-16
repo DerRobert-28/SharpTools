@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharpTools\FunctionTypes\Consumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function5.cs" />
     <Compile Include="SharpTools\FunctionTypes\Suppliers\ByteSupplier.cs" />
     <Compile Include="SharpTools\FunctionTypes\Suppliers\CharConsumer.cs" />
     <Compile Include="SharpTools\FunctionTypes\Suppliers\DecimalSupplier.cs" />
