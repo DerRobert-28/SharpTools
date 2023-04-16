@@ -1,5 +1,6 @@
-﻿namespace SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes {
 
+	/*
 	using System;
 
 	public class Consumer {
@@ -38,6 +39,7 @@
 			=> Consumer<Exception>.of(consumer);
 
 	}
+	*/
 
 
 	public class Consumer<T> {
@@ -50,7 +52,7 @@
 		public Consumer<T> accept() => this;
 		public void accept(T value) => consumer.Invoke(value);
 
-		private Consumer(Delegate consumer) => this.consumer = consumer;
+		protected Consumer(Delegate consumer) => this.consumer = consumer;
 	
 	}
 

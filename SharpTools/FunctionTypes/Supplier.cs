@@ -1,5 +1,6 @@
-﻿namespace SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes {
 
+	/*
 	using System;
 	using ValueTypes;
 
@@ -39,6 +40,7 @@
 			=> Supplier<Exception>.of(supplier);
 
 	}
+	*/
 
 	public class Supplier<T> {
 
@@ -54,7 +56,7 @@
 			return this;
 		}
 
-		private Supplier(Delegate supplier) => this.supplier = supplier;
+		protected Supplier(Delegate supplier) => this.supplier = supplier;
 	
 	}
 }

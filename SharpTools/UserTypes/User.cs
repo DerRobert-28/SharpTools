@@ -1,4 +1,5 @@
-﻿namespace SharpTools.UserTypes {
+﻿namespace DerRobert28.SharpTools.UserTypes {
+
 	using SharpTools.FunctionTypes;
 	using System;
 	using ValueTypes;

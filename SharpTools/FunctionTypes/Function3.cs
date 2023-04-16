@@ -1,4 +1,4 @@
-﻿namespace SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes {
 
 	public class Function3<T1, T2, T3, R> {
 

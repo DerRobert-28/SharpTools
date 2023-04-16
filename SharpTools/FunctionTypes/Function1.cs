@@ -1,6 +1,4 @@
-﻿using System.CodeDom;
-
-namespace SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes {
 
 	public class Function1<T, R> {
 

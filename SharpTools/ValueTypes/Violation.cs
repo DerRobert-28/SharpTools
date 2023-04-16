@@ -1,4 +1,4 @@
-﻿namespace SharpTools.ValueTypes {
+﻿namespace DerRobert28.SharpTools.ValueTypes {
 	
 	using System;
 
@@ -10,14 +10,8 @@
 		public static readonly Exception MissingGetValue =
 			new InvalidOperationException("get() called with no value present");
 
-		public static readonly Exception MissingPeekValue =
-			new InvalidOperationException("peek() called with no value present");
-
 		public static readonly Exception MissingGetLeftValue =
 			new InvalidOperationException("getLeft() called with no left value present");
-
-		public static readonly Exception MissingPeekLeftValue =
-			new InvalidOperationException("peekLeft() called with no left value present");
 
 	}
 

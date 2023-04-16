@@ -1,4 +1,4 @@
-﻿namespace SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes {
 
 	public class Function0<R> {
 

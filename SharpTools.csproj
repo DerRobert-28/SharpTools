@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3A8CCEF7-861A-45AF-A69D-24814FE3908D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SharpTools</RootNamespace>
+    <RootNamespace>DerRobert28.SharpTools</RootNamespace>
     <AssemblyName>SharpTools</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,19 +46,42 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharpTools\FunctionTypes\Consumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\ByteSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\CharConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\DecimalSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\DoubleSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\ExceptionConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\FloatSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\IntSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\LongSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\ObjectSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\ShortSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Suppliers\StringSupplier.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\ObjectConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\ExceptionConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\StringConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\DecimalConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\DoubleConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\FloatConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\LongConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\CharConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\ShortConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\ByteConsumer.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Consumers\IntConsumer.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function0.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function1.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function2.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function3.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function4.cs" />
     <Compile Include="SharpTools\FunctionTypes\Supplier.cs" />
-    <Compile Include="SharpTools\Program.cs" />
+    <Compile Include="Tests\Program.cs" />
     <Compile Include="SharpTools\UserTypes\Activity.cs" />
     <Compile Include="SharpTools\UserTypes\Task.cs" />
     <Compile Include="SharpTools\UserTypes\User.cs" />
     <Compile Include="SharpTools\ValueTypes\Either.cs" />
     <Compile Include="SharpTools\ValueTypes\Option.cs" />
     <Compile Include="SharpTools\ValueTypes\Violation.cs" />
+    <Compile Include="Tests\Tasks\Duplicate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,4 @@
-﻿namespace SharpTools.ValueTypes {
+﻿namespace DerRobert28.SharpTools.ValueTypes {
 
 	using FunctionTypes;
 	
