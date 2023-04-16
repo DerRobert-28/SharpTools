@@ -2,7 +2,7 @@
 
 	using System;
 
-	public class Function3<T1, T2, T3, R> {
+	public class Function3<T1, T2, T3, R>: Function {
 
 		//
 		//	PRIVATE ELEMENTS:
@@ -37,7 +37,7 @@
 		//	PRIVATE CONSTRUCTOR:
 		//
 
-		private Function3(Delegate function) => this.function = function;
+		private Function3(Delegate function): base(3) => this.function = function;
 
 	}
 
