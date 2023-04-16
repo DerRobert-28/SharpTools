@@ -1,4 +1,4 @@
-﻿namespace DerRobert28.SharpTools.Tests.Tasks {
+﻿namespace DerRobert28.Tests.Tasks {
 
 	using SharpTools.UserTypes;
 	using SharpTools.ValueTypes;
@@ -17,7 +17,7 @@
 		public static Duplicate theValue() => new Duplicate();
 
 		//
-		//	PRIVATE CONSTRUCTOR:
+		//	CONSTRUCTOR:
 		//
 
 		private Duplicate(): base("Duplicate") {}
