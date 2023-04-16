@@ -68,11 +68,11 @@
     <Compile Include="SharpTools\FunctionTypes\Consumers\ShortConsumer.cs" />
     <Compile Include="SharpTools\FunctionTypes\Consumers\ByteConsumer.cs" />
     <Compile Include="SharpTools\FunctionTypes\Consumers\IntConsumer.cs" />
-    <Compile Include="SharpTools\FunctionTypes\Function0.cs" />
-    <Compile Include="SharpTools\FunctionTypes\Function1.cs" />
-    <Compile Include="SharpTools\FunctionTypes\Function2.cs" />
-    <Compile Include="SharpTools\FunctionTypes\Function3.cs" />
-    <Compile Include="SharpTools\FunctionTypes\Function4.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function0.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function1.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function2.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function3.cs" />
+    <Compile Include="SharpTools\FunctionTypes\Functions\Function4.cs" />
     <Compile Include="SharpTools\FunctionTypes\Supplier.cs" />
     <Compile Include="Tests\Program.cs" />
     <Compile Include="SharpTools\UserTypes\Activity.cs" />

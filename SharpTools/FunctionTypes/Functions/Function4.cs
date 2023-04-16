@@ -1,4 +1,4 @@
-﻿namespace DerRobert28.SharpTools.FunctionTypes {
+﻿namespace DerRobert28.SharpTools.FunctionTypes.Functions {
 
 	public class Function4<T1, T2, T3, T4, R> {
 

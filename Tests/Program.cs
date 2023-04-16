@@ -1,6 +1,5 @@
 ﻿namespace DerRobert28.Tests {
 
-	using SharpTools.FunctionTypes;
 	using SharpTools.FunctionTypes.Consumers;
 	using SharpTools.Tests.Tasks;
 	using SharpTools.UserTypes;
@@ -13,7 +12,7 @@
 			
 			var Robert = User.named("Robert");
 			var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
-			var errorToConsole = Consumer.ofException(e => Console.WriteLine(e.Message));
+			var errorToConsole = ExceptionConsumer.of(e => Console.WriteLine(e.Message));
 			
 			Robert.attemptsTo(
 				
