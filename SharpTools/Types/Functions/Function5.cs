@@ -1,8 +1,10 @@
 ﻿namespace DerRobert28.SharpTools.Types.Functions {
 
+	using Abstract.Classes;
 	using System;
 
-	public class Function5<T1, T2, T3, T4, T5, R>: TFunction {
+	public class Function5<T1, T2, T3, T4, T5, R>:
+		TFunction<Function5<T1, T2, T3, T4, T5, R>> {
 	
 		//
 		//	PRIVATE ELEMENTS:
@@ -18,7 +20,7 @@
 		public static Function5<T1, T2, T3, T4, T5, R> of(Delegate function)
 			=> new Function5<T1, T2, T3, T4, T5, R>(function);
 
-		public Function5<T1, T2, T3, T4, T5, R> apply() => this;
+		public override Function5<T1, T2, T3, T4, T5, R> apply() => this;
 
 		public Function4<T2, T3, T4, T5, R> apply(T1 t1)
 			=> Function4<T2, T3, T4, T5, R>.of((t2, t3, t4, t5)

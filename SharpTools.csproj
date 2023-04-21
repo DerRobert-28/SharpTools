@@ -52,6 +52,9 @@
     <Compile Include="SharpTools\Types\Consumer.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IFunction.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TFunction.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function9.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function8.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function7.cs" />
     <Compile Include="SharpTools\Types\Functions\Function6.cs" />
     <Compile Include="SharpTools\Types\Functions\Function5.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IEither.cs" />

@@ -1,8 +1,11 @@
 ﻿namespace DerRobert28.SharpTools.Types.Functions {
 
+	using Abstract.Classes;
+	using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 	using System;
 
-	public class Function3<T1, T2, T3, R>: TFunction {
+	public class Function3<T1, T2, T3, R>:
+		TFunction<Function3<T1, T2, T3, R>> {
 
 		//
 		//	PRIVATE ELEMENTS:
@@ -18,7 +21,7 @@
 		public static Function3<T1, T2, T3, R> of(Delegate function)
 			=> new Function3<T1, T2, T3, R>(function);
 
-		public Function3<T1, T2, T3, R> apply() => this;
+		public override Function3<T1, T2, T3, R> apply() => this;
 
 		public Function2<T2, T3, R> apply(T1 t1)
 			=> Function2<T2, T3, R>.of((t2, t3)

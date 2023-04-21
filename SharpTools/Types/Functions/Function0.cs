@@ -1,8 +1,9 @@
 ﻿namespace DerRobert28.SharpTools.Types.Functions {
 
+	using Abstract.Classes;
 	using System;
 
-	public class Function0<R>: TFunction {
+	public class Function0<R>: TFunction<R> {
 	
 		//
 		//	PRIVATE ELEMENTS:
@@ -17,7 +18,9 @@
 
 		public static Function0<R> of(Delegate function) => new Function0<R>(function);
 
-		public R apply() => function.Invoke();
+		//public override IFunction
+
+		public override R apply() => function.Invoke();
 
 		public static explicit operator Function0<R>
 			(Func<R> function) => of(new Delegate(function));
