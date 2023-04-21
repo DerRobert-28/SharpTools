@@ -12,8 +12,7 @@
 
 		
 			var Robert = User.named("Robert");
-			//var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
-			var resultToConsole = Consumer<int>.of(x => Console.WriteLine("Der Wert ist: {0}", x));
+			var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
 			var errorToConsole = ExceptionConsumer.of(e => Console.WriteLine(e.Message));
 
 

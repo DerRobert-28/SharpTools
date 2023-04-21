@@ -1,7 +1,6 @@
 ﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 	using Containers;
-	using DerRobert28.SharpTools.Types.Functions;
 	using Interfaces;
 	using System;
 
@@ -27,6 +26,7 @@
 		}
 
 		protected TOptional() => hasValue = false;
+
 		protected TOptional(T value) {
 			this.value = value;
 			this.hasValue = true;
