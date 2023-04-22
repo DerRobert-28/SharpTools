@@ -5,7 +5,7 @@
 	public sealed class Violation: Exception {
 
 		public static readonly Exception MissingMapper =
-			new NullReferenceException("Mapper shoudl not be NULL");
+			new NullReferenceException("Mapper should not be NULL");
 
 		public static readonly Exception MissingGetValue =
 			new InvalidOperationException("get() called with no value present");

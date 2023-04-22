@@ -2,10 +2,10 @@
 
 	public class DoubleSupplier: Supplier<double> {
 
-		public static DoubleSupplier of(Supplier<double>.Delegate supplier)
+		public static DoubleSupplier of(Delegate supplier)
 			=> new DoubleSupplier(supplier);
 		
-		private DoubleSupplier(Supplier<double>.Delegate supplier): base(supplier) {}
+		private DoubleSupplier(Delegate supplier): base(supplier) {}
 
 	}
 

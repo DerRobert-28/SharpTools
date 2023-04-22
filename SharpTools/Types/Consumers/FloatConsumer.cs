@@ -2,10 +2,10 @@
 
 	public class FloatConsumer: Consumer<float> {
 
-		public static FloatConsumer of(Consumer<float>.Delegate function)
+		public static FloatConsumer of(Delegate function)
 			=> new FloatConsumer(function);
 		
-		private FloatConsumer(Consumer<float>.Delegate function): base(function) {}
+		private FloatConsumer(Delegate function): base(function) {}
 
 	}
 

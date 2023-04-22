@@ -48,6 +48,8 @@
     <Compile Include="SharpTools\Types\Abstract\Classes\TAcceptor.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TEither.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TOptional.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftMapper.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IMapper.cs" />
     <Compile Include="SharpTools\Types\Consumer.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IFunction.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TFunction.cs" />

@@ -2,10 +2,10 @@
 
 	public class ByteSupplier: Supplier<byte> {
 
-		public static ByteSupplier of(Supplier<byte>.Delegate supplier)
+		public static ByteSupplier of(Delegate supplier)
 			=> new ByteSupplier(supplier);
 		
-		private ByteSupplier(Supplier<byte>.Delegate supplier): base(supplier) {}
+		private ByteSupplier(Delegate supplier): base(supplier) {}
 
 	}
 

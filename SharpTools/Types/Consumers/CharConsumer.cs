@@ -2,10 +2,10 @@
 
 	public class CharConsumer: Consumer<char> {
 
-		public static CharConsumer of(Consumer<char>.Delegate function)
+		public static CharConsumer of(Delegate function)
 			=> new CharConsumer(function);
 		
-		private CharConsumer(Consumer<char>.Delegate function): base(function) {}
+		private CharConsumer(Delegate function): base(function) {}
 
 	}
 

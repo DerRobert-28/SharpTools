@@ -2,10 +2,10 @@
 
 	public class DoubleConsumer: Consumer<double> {
 
-		public static DoubleConsumer of(Consumer<double>.Delegate function)
+		public static DoubleConsumer of(Delegate function)
 			=> new DoubleConsumer(function);
 		
-		private DoubleConsumer(Consumer<double>.Delegate function): base(function) {}
+		private DoubleConsumer(Delegate function): base(function) {}
 
 	}
 

@@ -2,10 +2,10 @@
 
 	public class IntConsumer: Consumer<int> {
 
-		public static IntConsumer of(Consumer<int>.Delegate function)
+		public static IntConsumer of(Delegate function)
 			=> new IntConsumer(function);
 		
-		private IntConsumer(Consumer<int>.Delegate function): base(function) {}
+		private IntConsumer(Delegate function): base(function) {}
 
 	}
 

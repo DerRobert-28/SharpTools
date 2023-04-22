@@ -2,10 +2,10 @@
 
 	public class CharSupplier: Supplier<char> {
 
-		public static CharSupplier of(Supplier<char>.Delegate supplier)
+		public static CharSupplier of(Delegate supplier)
 			=> new CharSupplier(supplier);
 		
-		private CharSupplier(Supplier<char>.Delegate supplier): base(supplier) {}
+		private CharSupplier(Delegate supplier): base(supplier) {}
 
 	}
 

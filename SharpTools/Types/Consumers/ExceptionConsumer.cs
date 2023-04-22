@@ -4,10 +4,10 @@
 
 	public class ExceptionConsumer: Consumer<Exception> {
 
-		public static ExceptionConsumer of(Consumer<Exception>.Delegate function)
+		public static ExceptionConsumer of(Delegate function)
 			=> new ExceptionConsumer(function);
 		
-		private ExceptionConsumer(Consumer<Exception>.Delegate function): base(function) {}
+		private ExceptionConsumer(Delegate function): base(function) {}
 
 	}
 

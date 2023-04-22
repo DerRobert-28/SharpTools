@@ -3,6 +3,7 @@
 	using Abstract.Classes;
 	using Abstract.Interfaces;
 	using Functions;
+	using System;
 
 	public class Option<T>: TOptional<Option<T>, T> {
 	
@@ -16,7 +17,7 @@
 			}
 			return new Option<R>(mapper.apply(value));
 		}
-		
+
 		private Option(): base() {}
 		private Option(T value): base(value) {}
 
