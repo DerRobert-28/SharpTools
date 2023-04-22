@@ -2,7 +2,7 @@
 
 	public interface IPeeker<C, T> {
 
-		C peek(IAcceptor<C, T> function);
+		C peek(IAcceptor<T> function);
 
 	}
 

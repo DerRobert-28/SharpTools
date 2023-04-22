@@ -3,7 +3,7 @@
 	using Containers;
 	using Interfaces;
 
-	public abstract class TEither<L, R>: IEither<L, R> {
+	public abstract class TEither<C, L, R>: IEither<C, L, R> {
 
 		protected enum Projection {
 			Left,
@@ -31,23 +31,23 @@
 			return leftValue;
 		}
 
-		public TEither<L, R> peek(IAcceptor<TEither<L, R>, R> function) {
+		public C peek(IAcceptor<R> function) {
 			if(isRight()) {
 				function.accept(rightValue);
 			}
-			return this;
+			return (C) (object) this;
 		}
 
-		public TEither<L, R> peekLeft(IAcceptor<TEither<L, R>, L> function) {
+		public C peekLeft(IAcceptor<L> function) {
 			if(isLeft()) {
 				function.accept(leftValue);
 			}
-			return this;
+			return (C) (object) this;
 		}
 
 		private bool isLeft(Projection projection) => projection == Projection.Left;
 		private bool isRight(Projection projection) => projection == Projection.Right;
-		
+
 		protected TEither(Projection projection, object value) {
 			if(isLeft(projection)) {
 				leftValue = (L)value;

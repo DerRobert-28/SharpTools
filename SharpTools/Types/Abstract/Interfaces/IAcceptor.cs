@@ -1,8 +1,10 @@
-﻿namespace DerRobert28.SharpTools.Types.Abstract.Interfaces {
+﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
 
-	public interface IAcceptor<C, T> {
+namespace DerRobert28.SharpTools.Types.Abstract.Interfaces {
 
-		C accept();
+	public interface IAcceptor<T> {
+
+		IAcceptor<T> accept();
 
 		void accept(T value);
 

@@ -2,7 +2,7 @@
 
 	public interface ILeftPeeker<C, T> {
 
-		C peekLeft(IAcceptor<C, T> function);
+		C peekLeft(IAcceptor<T> function);
 
 	}
 

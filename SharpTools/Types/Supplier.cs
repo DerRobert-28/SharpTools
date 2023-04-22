@@ -11,7 +11,7 @@
 
 		public T get() => supplier.Invoke();
 
-		public Supplier<T> peek(IAcceptor<Supplier<T>, T> consumer) {
+		public Supplier<T> peek(IAcceptor<T> consumer) {
 			consumer.accept(get());
 			return this;
 		}

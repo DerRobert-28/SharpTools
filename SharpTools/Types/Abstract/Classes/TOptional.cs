@@ -1,10 +1,11 @@
 ﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 	using Containers;
+	using Functions;
 	using Interfaces;
 	using System;
 
-	public abstract class TOptional<C, T>: IOptional<TOptional<C, T>, T> {
+	public abstract class TOptional<C, T>: IOptional<C, T> {
 
 		protected readonly bool hasValue;
 		protected readonly T value;
@@ -18,11 +19,11 @@
 			return value;
 		}
 
-		public TOptional<C, T> peek(IAcceptor<TOptional<C, T>, T> consumer) {
+		public C peek(IAcceptor<T> consumer) {
 			if(hasValue) {
 				consumer.accept(value);
 			}
-			return this;
+			return (C) (object) this;
 		}
 
 		protected TOptional() => hasValue = false;
