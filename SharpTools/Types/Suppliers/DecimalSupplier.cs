@@ -2,10 +2,11 @@
 
 	public class DecimalSupplier: Supplier<decimal> {
 
-		public static DecimalSupplier of(Delegate supplier)
+		public static DecimalSupplier of(Supplier<decimal> supplier)
 			=> new DecimalSupplier(supplier);
 		
-		private DecimalSupplier(Delegate supplier): base(supplier) {}
+		private DecimalSupplier(Supplier<decimal> supplier):
+			base(supplier) {}
 
 	}
 

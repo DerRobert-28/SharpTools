@@ -2,10 +2,11 @@
 
 	public class ByteConsumer: Consumer<byte> {
 
-		public static ByteConsumer of(Delegate function)
+		public static ByteConsumer of(Consumer<byte> function)
 			=> new ByteConsumer(function);
 		
-		private ByteConsumer(Delegate function): base(function) {}
+		private ByteConsumer(Consumer<byte> function):
+			base(function) {}
 
 	}
 

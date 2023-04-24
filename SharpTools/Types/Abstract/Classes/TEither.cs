@@ -1,7 +1,7 @@
-﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
+﻿using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 
-	using Containers;
-	using Interfaces;
+namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 	public abstract class TEither<C, L, R>: IEither<C, L, R> {
 
@@ -35,14 +35,14 @@
 			if(isRight()) {
 				function.accept(rightValue);
 			}
-			return (C) (object) this;
+			return Caster<C>.of(this);
 		}
 
 		public C peekLeft(IAcceptor<L> function) {
 			if(isLeft()) {
 				function.accept(leftValue);
 			}
-			return (C) (object) this;
+			return Caster<C>.of(this);
 		}
 
 		private bool isLeft(Projection projection) => projection == Projection.Left;

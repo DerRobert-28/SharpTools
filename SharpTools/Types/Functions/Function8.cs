@@ -1,27 +1,19 @@
-﻿namespace DerRobert28.SharpTools.Types.Functions {
+﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
+using System;
 
-	using Abstract.Classes;
-	using System;
+namespace DerRobert28.SharpTools.Types.Functions {
 
 	public class Function8<T1, T2, T3, T4, T5, T6, T7, T8, R>:
 		TFunction<Function8<T1, T2, T3, T4, T5, T6, T7, T8, R>> {
 	
-		//
-		//	PRIVATE ELEMENTS:
-		//
+		private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, R> function;
 
-		public delegate R Delegate(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
-		private readonly Delegate function;
-		
-		//
-		//	PUBLIC METHODS:
-		//
-		
-
-		public static Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> of(Delegate function)
+		public static Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> of
+			(Func<T1, T2, T3, T4, T5, T6, T7, T8, R> function)
 			=> new Function8<T1, T2, T3, T4, T5, T6, T7, T8, R>(function);
 
-		public override Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> apply() => this;
+		public override Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> apply()
+			=> this;
 
 		public Function7<T2, T3, T4, T5, T6, T7, T8, R> apply(T1 t1)
 			=> Function7<T2, T3, T4, T5, T6, T7, T8, R>.of((t2, t3, t4, t5, t6, t7, t8)
@@ -55,13 +47,11 @@
 			=> function.Invoke(t1, t2, t3, t4, t5, t6, t7, t8);
 
 		public static explicit operator Function8<T1, T2, T3, T4, T5, T6, T7, T8, R>
-			(Func<T1, T2, T3, T4, T5, T6, T7, T8, R> function) => of(new Delegate(function));
+			(Func<T1, T2, T3, T4, T5, T6, T7, T8, R> function)
+				=> of(function);
 
-		//
-		//	PRIVATE CONSTRUCTOR:
-		//
-
-		private Function8(Delegate function): base(8) => this.function = function;
+		private Function8(Func<T1, T2, T3, T4, T5, T6, T7, T8, R> function):
+			base(8) => this.function = function;
 
 	}
 

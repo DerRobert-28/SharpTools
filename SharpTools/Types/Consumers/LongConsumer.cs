@@ -2,10 +2,11 @@
 
 	public class LongConsumer: Consumer<long> {
 
-		public static LongConsumer of(Delegate function)
+		public static LongConsumer of(Consumer<long> function)
 			=> new LongConsumer(function);
 		
-		private LongConsumer(Delegate function): base(function) {}
+		private LongConsumer(Consumer<long> function):
+			base(function) {}
 
 	}
 

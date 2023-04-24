@@ -1,11 +1,13 @@
-﻿namespace DerRobert28.SharpTools.Types.Activities {
+﻿using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types.Containers;
+using System;
 
-	using Containers;
-	using System;
+
+namespace DerRobert28.SharpTools.Types.Activities {
 
 	public interface Activity<T, R> {
 
-		Either<Exception, R> performAs(User user, T value);
+		Either<Violation, R> performAs(User user, T value);
 
 	}
 

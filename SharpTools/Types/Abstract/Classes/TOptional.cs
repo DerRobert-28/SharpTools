@@ -1,16 +1,18 @@
-﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
+﻿using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+using DerRobert28.SharpTools.Types.Containers;
+using DerRobert28.SharpTools.Types.Functions;
+using System;
 
-	using Containers;
-	using Functions;
-	using Interfaces;
-	using System;
+namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 	public abstract class TOptional<C, T>: IOptional<C, T> {
 
 		protected readonly bool hasValue;
 		protected readonly T value;
 
-		public bool isDefined() => hasValue;
+		public bool isDefined()
+			=> hasValue;
 
 		public T get() {
 			if(!hasValue) {
@@ -23,7 +25,7 @@
 			if(hasValue) {
 				consumer.accept(value);
 			}
-			return (C) (object) this;
+			return Caster<C>.of(this);
 		}
 
 		protected TOptional() => hasValue = false;

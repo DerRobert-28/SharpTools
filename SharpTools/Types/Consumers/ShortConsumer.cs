@@ -2,10 +2,11 @@
 
 	public class ShortConsumer: Consumer<short> {
 
-		public static ShortConsumer of(Delegate function)
+		public static ShortConsumer of(Consumer<short> function)
 			=> new ShortConsumer(function);
 		
-		private ShortConsumer(Delegate function): base(function) {}
+		private ShortConsumer(Consumer<short> function):
+			base(function) {}
 
 	}
 

@@ -1,24 +1,14 @@
-﻿namespace DerRobert28.SharpTools.Types.Functions {
+﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
+using System;
 
-	using Abstract.Classes;
-	using DerRobert28.SharpTools.Types.Abstract.Interfaces;
-	using System;
+namespace DerRobert28.SharpTools.Types.Functions {
 
 	public class Function3<T1, T2, T3, R>:
 		TFunction<Function3<T1, T2, T3, R>> {
 
-		//
-		//	PRIVATE ELEMENTS:
-		//
+		private readonly Func<T1, T2, T3, R> function;
 
-		public delegate R Delegate(T1 t1, T2 t2, T3 t3);
-		private readonly Delegate function;
-		
-		//
-		//	PUBLIC METHODS:
-		//
-
-		public static Function3<T1, T2, T3, R> of(Delegate function)
+		public static Function3<T1, T2, T3, R> of(Func<T1, T2, T3, R> function)
 			=> new Function3<T1, T2, T3, R>(function);
 
 		public override Function3<T1, T2, T3, R> apply() => this;
@@ -33,14 +23,11 @@
 
 		public R apply(T1 t1, T2 t2, T3 t3) => function.Invoke(t1, t2, t3);
 
-		public static explicit operator Function3<T1, T2, T3, R>
-			(Func<T1, T2, T3, R> function) => of(new Delegate(function));
+		public static implicit operator Function3<T1, T2, T3, R>
+			(Func<T1, T2, T3, R> function) => of(function);
 
-		//
-		//	PRIVATE CONSTRUCTOR:
-		//
-
-		private Function3(Delegate function): base(3) => this.function = function;
+		private Function3(Func<T1, T2, T3, R> function):
+			base(3) => this.function = function;
 
 	}
 

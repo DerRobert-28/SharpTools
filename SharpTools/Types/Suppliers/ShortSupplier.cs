@@ -2,10 +2,11 @@
 
 	public class ShortSupplier: Supplier<short> {
 
-		public static ShortSupplier of(Delegate supplier)
+		public static ShortSupplier of(Supplier<short> supplier)
 			=> new ShortSupplier(supplier);
 		
-		private ShortSupplier(Delegate supplier): base(supplier) {}
+		private ShortSupplier(Supplier<short> supplier):
+			base(supplier) {}
 
 	}
 

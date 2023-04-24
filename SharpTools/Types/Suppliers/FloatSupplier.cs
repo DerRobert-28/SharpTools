@@ -2,10 +2,10 @@
 
 	public class FloatSupplier: Supplier<float> {
 
-		public static FloatSupplier of(Delegate supplier)
+		public static FloatSupplier of(Supplier<float> supplier)
 			=> new FloatSupplier(supplier);
 		
-		private FloatSupplier(Delegate supplier): base(supplier) {}
+		private FloatSupplier(Supplier<float> supplier): base(supplier) {}
 
 	}
 

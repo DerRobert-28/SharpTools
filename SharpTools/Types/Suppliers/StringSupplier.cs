@@ -2,10 +2,11 @@
 
 	public class StringSupplier: Supplier<string> {
 
-		public static StringSupplier of(Delegate supplier)
+		public static StringSupplier of(Supplier<string> supplier)
 			=> new StringSupplier(supplier);
 		
-		private StringSupplier(Delegate supplier): base(supplier) {}
+		private StringSupplier(Supplier<string> supplier):
+			base(supplier) {}
 
 	}
 

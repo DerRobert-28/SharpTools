@@ -2,10 +2,11 @@
 
 	public class DecimalConsumer: Consumer<decimal> {
 
-		public static DecimalConsumer of(Delegate function)
+		public static DecimalConsumer of(Consumer<decimal> function)
 			=> new DecimalConsumer(function);
 		
-		private DecimalConsumer(Delegate function): base(function) {}
+		private DecimalConsumer(Consumer<decimal> function):
+			base(function) {}
 
 	}
 

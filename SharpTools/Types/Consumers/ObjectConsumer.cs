@@ -2,10 +2,11 @@
 
 	public class ObjectConsumer: Consumer<object> {
 
-		public static ObjectConsumer of(Delegate function)
+		public static ObjectConsumer of(Consumer<object> function)
 			=> new ObjectConsumer(function);
 		
-		private ObjectConsumer(Delegate function): base(function) {}
+		private ObjectConsumer(Consumer<object> function):
+			base(function) {}
 
 	}
 

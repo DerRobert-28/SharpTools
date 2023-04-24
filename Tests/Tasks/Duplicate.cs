@@ -1,27 +1,27 @@
-﻿namespace DerRobert28.Tests.Tasks {
+﻿using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types;
+using DerRobert28.SharpTools.Types.Activities;
+using DerRobert28.SharpTools.Types.Containers;
+using System;
+using System.Runtime.CompilerServices;
 
-	using SharpTools.Types;
-	using SharpTools.Types.Activities;
-	using SharpTools.Types.Containers;
-	using System;
+namespace DerRobert28.Tests.Tasks {
 	
-	class Duplicate: Task<int, int> {
-		
-		//
-		//	PUBLIC METHODS:
-		//
+	class Duplicate: Task<Nothing, int> {
 
-		public override Either<Exception, int> performAs(User user, int number) {
-			return Either<Exception, int>.right(2 * number);
+		readonly int number;
+		
+		public override Either<Violation, int> performAs(User user, Nothing dummy) {
+			return Either<Violation, int>.right(2 * number);
 		}
 		
-		public static Duplicate theValue() => new Duplicate();
+		public static Duplicate theValue(int number)
+			=> new Duplicate(number);
 
-		//
-		//	CONSTRUCTOR:
-		//
-
-		private Duplicate(): base("Duplicate") {}
+		private Duplicate(int number):
+			base("Duplicate") {
+			this.number = number;
+		}
 
 	}
 

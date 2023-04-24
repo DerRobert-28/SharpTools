@@ -1,22 +1,25 @@
-﻿namespace DerRobert28.SharpTools.Types {
+﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+using System;
 
-	using Abstract.Interfaces;
+namespace DerRobert28.SharpTools.Types {
 
-	public class Supplier<T>: IValue<Supplier<T>, T> {
+	public class Supplier<T>: TSupplier<Supplier<T>, T> {
 		
-		public delegate T Delegate();
-		private readonly Delegate supplier;
-		
-		public static Supplier<T> of(Delegate supplier) => new Supplier<T>(supplier);
+		public static Supplier<T> of(Func<T> function)
+			=> new Supplier<T>(function);
 
-		public T get() => supplier.Invoke();
+		public static Supplier<T> of(Supplier<T> supplier)
+			=> new Supplier<T>(supplier.function);
 
-		public Supplier<T> peek(IAcceptor<T> consumer) {
-			consumer.accept(get());
-			return this;
-		}
+		public static implicit operator Func<T>(Supplier<T> supplier)
+			=> supplier.function;
 
-		protected Supplier(Delegate supplier) => this.supplier = supplier;
+		public static implicit operator Supplier<T>(Func<T> function)
+			=> of(function);
+
+		protected Supplier(Func<T> function):
+			base(function) {}
 	
 	}
 

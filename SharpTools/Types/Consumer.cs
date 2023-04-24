@@ -1,17 +1,20 @@
-﻿namespace DerRobert28.SharpTools.Types {
+﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
+using System;
 
-	using Abstract.Classes;
-	using DerRobert28.SharpTools.Types.Functions;
-	using System;
+namespace DerRobert28.SharpTools.Types {
 
 	public class Consumer<T>: TAcceptor<T> {
 		
-		public static Consumer<T> of(Delegate consumer) => new Consumer<T>(consumer);
+		public static Consumer<T> of(Action<T> function) => new Consumer<T>(function);
+		public static Consumer<T> of(Consumer<T> consumer) => new Consumer<T>(consumer.function);
 
-		public static explicit operator Consumer<T>(Action<T> function)
-			=> of(new Delegate(function));
+		public static implicit operator Action<T>(Consumer<T> consumer)
+			=> consumer.function;
 
-		protected Consumer(Delegate consumer): base(consumer) {}
+		public static implicit operator Consumer<T>(Action<T> function)
+			=> of(new Action<T>(function));
+
+		protected Consumer(Action<T> consumer): base(consumer) {}
 	
 	}
 

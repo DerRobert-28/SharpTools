@@ -2,9 +2,11 @@
 
 	public class IntSupplier: Supplier<int> {
 
-		public static IntSupplier of(Delegate supplier) => new IntSupplier(supplier);
+		public static IntSupplier of(Supplier<int> supplier)
+			=> new IntSupplier(supplier);
 		
-		private IntSupplier(Delegate supplier): base(supplier) {}
+		private IntSupplier(Supplier<int> supplier):
+			base(supplier) {}
 
 	}
 
