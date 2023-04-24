@@ -1,5 +1,6 @@
 ﻿using DerRobert28.SharpTools.Types;
 using DerRobert28.SharpTools.Types.Consumers;
+using DerRobert28.SharpTools.Types.Suppliers;
 using DerRobert28.Tests.Tasks;
 using System;
 
@@ -13,6 +14,7 @@ namespace DerRobert28.Tests {
 			var Robert = User.named("Robert");
 			var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
 			var errorToConsole = ViolationConsumer.of(e => Console.WriteLine(e.Message));
+			var waitForEnter = StringSupplier.of(() => Console.ReadLine());
 
 			Robert.attemptsTo_(
 				
@@ -20,9 +22,10 @@ namespace DerRobert28.Tests {
 			
 			)
 			.peek(resultToConsole)
-			.peekLeft(errorToConsole);
+			.peekLeft(errorToConsole)
+			;
 
-			Console.ReadLine();
+			waitForEnter.get();
 
 		}
 
