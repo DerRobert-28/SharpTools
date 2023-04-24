@@ -2,7 +2,6 @@
 using DerRobert28.SharpTools.Types.Abstract.Classes;
 using DerRobert28.SharpTools.Types.Functions;
 
-
 namespace DerRobert28.SharpTools.Types.Containers {
 
 	public class Option<T>: TOptional<Option<T>, T> {
