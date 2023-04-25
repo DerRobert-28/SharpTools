@@ -54,6 +54,7 @@
     <Compile Include="SharpTools\Types\Abstract\Interfaces\ISupplier.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftMapper.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IMapper.cs" />
+    <Compile Include="SharpTools\Types\Consumers\NothingConsumer.cs" />
     <Compile Include="SharpTools\Types\Nothing.cs" />
     <Compile Include="SharpTools\Types\Consumer.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IFunction.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="SharpTools\Types\Suppliers\CharConsumer.cs" />
     <Compile Include="SharpTools\Types\Suppliers\DecimalSupplier.cs" />
     <Compile Include="SharpTools\Types\Suppliers\DoubleSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\NothingSupplier.cs" />
     <Compile Include="SharpTools\Types\Suppliers\ViolationSupplier.cs" />
     <Compile Include="SharpTools\Types\Suppliers\ExceptionConsumer.cs" />
     <Compile Include="SharpTools\Types\Suppliers\FloatSupplier.cs" />

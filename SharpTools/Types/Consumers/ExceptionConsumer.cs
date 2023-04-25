@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace DerRobert28.SharpTools.Types.Consumers {
 
 	public class ExceptionConsumer: Consumer<Exception> {
