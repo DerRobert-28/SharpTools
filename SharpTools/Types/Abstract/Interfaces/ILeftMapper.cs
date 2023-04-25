@@ -1,5 +1,11 @@
-﻿namespace DerRobert28.SharpTools.Types.Abstract.Interfaces {
+﻿using DerRobert28.SharpTools.Types.Functions;
 
-	public interface ILeftMapper {}
+namespace DerRobert28.SharpTools.Types.Abstract.Interfaces {
+
+	public interface ILeftMapper<T> {
+	
+		object mapLeft<R>(Function1<T, R> mapper);
+
+	}
 
 }

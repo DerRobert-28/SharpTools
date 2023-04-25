@@ -1,6 +1,5 @@
 ﻿using DerRobert28.SharpTools.Helpers;
 using DerRobert28.SharpTools.Types.Abstract.Classes;
-using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 using DerRobert28.SharpTools.Types.Functions;
 
 namespace DerRobert28.SharpTools.Types.Containers {
@@ -10,27 +9,14 @@ namespace DerRobert28.SharpTools.Types.Containers {
 		public static Either<L1, R1> left(L1 value)
 			=> new Either<L1, R1>(Projection.Left, value);
 		
-		public Either<L2, R1> mapLeft<L2>(Function1<L1, L2> mapper) {
-			if(mapper == null) {
-				throw Violation.MissingMapper;
-			}
-			return isLeft()?
-				Either<L2, R1>.left(mapper.apply(getLeft())):
-				Either<L2, R1>.right(get());
-		}
-
-
+		public Either<L2, R1> mapLeft<L2>(Function1<L1, L2> mapper)
+			=> Caster<Either<L2, R1>>.of(base.mapLeft(mapper));
+		
 		public static Either<L1, R1> right(R1 value)
 			=> new Either<L1, R1>(Projection.Right, value);
 
-		public Either<L1, R2> map<R2>(Function1<R1, R2> mapper) {
-			if(mapper == null) {
-				throw Violation.MissingMapper;
-			}
-			return isRight()?
-				Either<L1, R2>.right(mapper.apply(get())):
-				Either<L1, R2>.left(getLeft());
-		}
+		public Either<L1, R2> map<R2>(Function1<R1, R2> mapper)
+			=> Caster<Either<L1, R2>>.of(base.map(mapper));
 
 		private Either(Projection projection, object value):
 			base(projection, value) {}

@@ -16,7 +16,8 @@ namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 			return Caster<C>.of(this);
 		}
 
-		protected TSupplier(Func<T> function) => this.function = function;
+		protected TSupplier(Func<T> function)
+			=> this.function = function;
 	
 	}
 

@@ -21,6 +21,13 @@ namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 			return value;
 		}
 
+		public object map<R>(Function1<T, R> mapper) {
+			if(mapper == null) {
+				throw Violation.MissingMapper;
+			}
+			return mapper.apply(value);
+		}
+
 		public C peek(IAcceptor<T> consumer) {
 			if(hasValue) {
 				consumer.accept(value);
