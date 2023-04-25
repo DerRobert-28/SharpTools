@@ -9,7 +9,6 @@ namespace DerRobert28.Tests {
 	class Program {
 
 		static void Main() {
-
 		
 			var Robert = User.named("Robert");
 			var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
