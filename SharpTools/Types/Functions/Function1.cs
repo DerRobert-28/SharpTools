@@ -3,15 +3,12 @@ using System;
 
 namespace DerRobert28.SharpTools.Types.Functions {
 
-	public class Function1<T, R>: TFunction<Function1<T, R>> {
+	public class Function1<T, R>: TFunction<Function1<T, R>, R> {
 
 		private readonly Func<T, R> function;
 
 		public static Function1<T, R> of(Func<T, R> function)
 			=> new Function1<T, R>(function);
-
-		public override Function1<T, R> apply()
-			=> this;
 
 		public R apply(T value)
 			=> function.Invoke(value);

@@ -4,15 +4,12 @@ using System;
 namespace DerRobert28.SharpTools.Types.Functions {
 
 	public class Function5<T1, T2, T3, T4, T5, R>:
-		TFunction<Function5<T1, T2, T3, T4, T5, R>> {
+		TFunction<Function5<T1, T2, T3, T4, T5, R>, R> {
 	
-		public delegate R Delegate(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
 		private readonly Func<T1, T2, T3, T4, T5, R> function;
 		
 		public static Function5<T1, T2, T3, T4, T5, R> of(Func<T1, T2, T3, T4, T5, R> function)
 			=> new Function5<T1, T2, T3, T4, T5, R>(function);
-
-		public override Function5<T1, T2, T3, T4, T5, R> apply() => this;
 
 		public Function4<T2, T3, T4, T5, R> apply(T1 t1)
 			=> Function4<T2, T3, T4, T5, R>.of((t2, t3, t4, t5)

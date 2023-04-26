@@ -1,16 +1,17 @@
 ﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 using System;
 
 namespace DerRobert28.SharpTools.Types.Functions {
 
-	public class Function0<R>: TFunction<R> {
+	public class Function0<R>: TFunction<Function0<R>, R> {
 	
 		private readonly Func<R> function;
 		
 		public static Function0<R> of(Func<R> function)
 			=> new Function0<R>(function);
 
-		public override R apply()
+		public R apply()
 			=> function.Invoke();
 
 		public static implicit operator Function0<R>
