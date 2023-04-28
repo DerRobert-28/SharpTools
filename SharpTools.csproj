@@ -57,6 +57,7 @@
     <Compile Include="SharpTools\Helpers\Violation.cs" />
     <Compile Include="Tests\Common\Program.cs" />
     <Compile Include="Tests\Common\Tasks\Duplicate.cs" />
+    <Compile Include="Tests\SharpTools\SupplierTests.cs" />
     <Compile Include="Tests\SharpTools\UserTests.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TAcceptor.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TEither.cs" />

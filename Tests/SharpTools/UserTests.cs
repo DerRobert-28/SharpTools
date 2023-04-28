@@ -9,18 +9,35 @@ namespace DerRobert28.Tests.SharpTools {
 
         [Test]
 		public void UserNamedTest() {
-			const string testUserName = "Test User";
-			var testUser = User.named(testUserName);
-
-			Assert.AreEqual(testUser.getName(), testUserName);
+			//
+			//	Arrange:
+			//
+			const string expectedName = "Test User";
+			//
+			//	Act:
+			//
+			var testUser = User.named(expectedName);
+			//
+			//	Assert:
+			//
+			Assert.AreEqual(testUser.getName(), expectedName);
 		}
-
 
         [Test]
 		public void UserGetNameTest() {
-			var testUser = User.named("True Man");
-
-			Assert.AreNotEqual(testUser.getName(), "False Man");
+			//
+			//	Arrange:
+			//
+			const string actualName = "Actual Name";
+			const string unexpectedName = "Unexpected Name";
+			//
+			//	Act:
+			//
+			var testUser = User.named(actualName);
+			//
+			//	Assert:
+			//
+			Assert.AreNotEqual(testUser.getName(), unexpectedName);
 		}
 
 	}
