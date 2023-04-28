@@ -74,14 +74,14 @@
     <Compile Include="SharpTools\FunctionTypes\Function3.cs" />
     <Compile Include="SharpTools\FunctionTypes\Function4.cs" />
     <Compile Include="SharpTools\FunctionTypes\Supplier.cs" />
-    <Compile Include="Tests\Program.cs" />
+    <Compile Include="Tests\Common\Program.cs" />
     <Compile Include="SharpTools\UserTypes\Activity.cs" />
     <Compile Include="SharpTools\UserTypes\Task.cs" />
     <Compile Include="SharpTools\UserTypes\User.cs" />
     <Compile Include="SharpTools\ValueTypes\Either.cs" />
     <Compile Include="SharpTools\ValueTypes\Option.cs" />
     <Compile Include="SharpTools\ValueTypes\Violation.cs" />
-    <Compile Include="Tests\Tasks\Duplicate.cs" />
+    <Compile Include="Tests\Common\Tasks\Duplicate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

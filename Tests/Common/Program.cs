@@ -1,4 +1,4 @@
-﻿namespace DerRobert28.Tests {
+﻿namespace DerRobert28.Tests.Common {
 
 	using SharpTools.FunctionTypes;
 	using SharpTools.FunctionTypes.Consumers;

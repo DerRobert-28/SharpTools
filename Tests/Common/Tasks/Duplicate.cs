@@ -1,4 +1,4 @@
-﻿namespace DerRobert28.SharpTools.Tests.Tasks {
+﻿namespace DerRobert28.SharpTools.Tests.Common.Tasks {
 
 	using SharpTools.UserTypes;
 	using SharpTools.ValueTypes;
