@@ -1,30 +1,30 @@
-﻿namespace DerRobert28.Tests {
+﻿using DerRobert28.SharpTools.Types;
+using DerRobert28.SharpTools.Types.Consumers;
+using DerRobert28.SharpTools.Types.Suppliers;
+using DerRobert28.Tests.Tasks;
+using System;
 
-	using SharpTools.FunctionTypes;
-	using SharpTools.FunctionTypes.Consumers;
-	using SharpTools.Tests.Tasks;
-	using SharpTools.UserTypes;
-	using SharpTools.ValueTypes;
-	using System;
-	
+namespace DerRobert28.Tests {
+
 	class Program {
 
 		static void Main() {
-			
+		
 			var Robert = User.named("Robert");
 			var resultToConsole = IntConsumer.of(x => Console.WriteLine("Der Wert ist: {0}", x));
-			var errorToConsole = Consumer.ofException(e => Console.WriteLine(e.Message));
-			
-			Robert.attemptsTo(
+			var errorToConsole = ViolationConsumer.of(e => Console.WriteLine(e.Message));
+			var waitForEnter = StringSupplier.of(() => Console.ReadLine());
+
+			Robert.attemptsTo_(
 				
-				Duplicate.theValue()
+				Duplicate.theValue(123)
 			
 			)
-			.apply(123)
 			.peek(resultToConsole)
-			.peekLeft(errorToConsole);
+			.peekLeft(errorToConsole)
+			;
 
-			Console.ReadLine();
+			waitForEnter.get();
 
 		}
 
