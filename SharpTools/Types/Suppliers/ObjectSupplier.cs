@@ -2,7 +2,7 @@
 
 	public class ObjectSupplier: Supplier<object> {
 
-		public static ObjectSupplier of(Supplier<object> supplier)
+		public static new ObjectSupplier of(Supplier<object> supplier)
 			=> new ObjectSupplier(supplier);
 		
 		private ObjectSupplier(Supplier<object> supplier):

@@ -2,7 +2,7 @@
 
 	public class DecimalConsumer: Consumer<decimal> {
 
-		public static DecimalConsumer of(Consumer<decimal> function)
+		public static new DecimalConsumer of(Consumer<decimal> function)
 			=> new DecimalConsumer(function);
 		
 		private DecimalConsumer(Consumer<decimal> function):

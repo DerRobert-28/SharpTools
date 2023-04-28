@@ -2,7 +2,7 @@
 
 	public class ShortConsumer: Consumer<short> {
 
-		public static ShortConsumer of(Consumer<short> function)
+		public static new ShortConsumer of(Consumer<short> function)
 			=> new ShortConsumer(function);
 		
 		private ShortConsumer(Consumer<short> function):

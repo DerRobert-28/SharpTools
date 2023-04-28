@@ -2,7 +2,7 @@
 
 	public class CharSupplier: Supplier<char> {
 
-		public static CharSupplier of(Supplier<char> supplier)
+		public static new CharSupplier of(Supplier<char> supplier)
 			=> new CharSupplier(supplier);
 		
 		private CharSupplier(Supplier<char> supplier):

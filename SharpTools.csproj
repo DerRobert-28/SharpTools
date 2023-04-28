@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit3TestAdapter.4.4.2\build\net462\NUnit3TestAdapter.props" Condition="Exists('packages\NUnit3TestAdapter.4.4.2\build\net462\NUnit3TestAdapter.props')" />
+  <Import Project="packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('packages\NUnit.3.13.3\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,77 +52,86 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SharpTools\Helpers\Mappers.cs" />
     <Compile Include="SharpTools\Helpers\Caster.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Classes\TSupplier.cs" />
+    <Compile Include="SharpTools\Helpers\Mappers.cs" />
+    <Compile Include="SharpTools\Helpers\Violation.cs" />
+    <Compile Include="Tests\Common\Program.cs" />
+    <Compile Include="Tests\Common\Tasks\Duplicate.cs" />
+    <Compile Include="Tests\SharpTools\UserTests.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TAcceptor.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TEither.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Classes\TOptional.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\ISupplier.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftMapper.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\IMapper.cs" />
-    <Compile Include="SharpTools\Types\Consumers\NothingConsumer.cs" />
-    <Compile Include="SharpTools\Types\Nothing.cs" />
-    <Compile Include="SharpTools\Types\Consumer.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\IFunction.cs" />
     <Compile Include="SharpTools\Types\Abstract\Classes\TFunction.cs" />
-    <Compile Include="SharpTools\Types\Consumers\ViolationConsumer.cs" />
-    <Compile Include="SharpTools\Types\Functions\Function9.cs" />
-    <Compile Include="SharpTools\Types\Functions\Function8.cs" />
-    <Compile Include="SharpTools\Types\Functions\Function7.cs" />
-    <Compile Include="SharpTools\Types\Functions\Function6.cs" />
-    <Compile Include="SharpTools\Types\Functions\Function5.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Classes\TOptional.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Classes\TSupplier.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IAcceptor.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IEither.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IFunction.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IGetter.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftGetter.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftMapper.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftPeeker.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\ILeftValue.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IMapper.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IOptional.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\IPeeker.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Interfaces\ISupplier.cs" />
     <Compile Include="SharpTools\Types\Abstract\Interfaces\IValue.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\ByteSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\CharConsumer.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\DecimalSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\DoubleSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\NothingSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\ViolationSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\ExceptionConsumer.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\FloatSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\IntSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\LongSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\ObjectSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\ShortSupplier.cs" />
-    <Compile Include="SharpTools\Types\Suppliers\StringSupplier.cs" />
-    <Compile Include="SharpTools\Types\Consumers\ObjectConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\ExceptionConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\StringConsumer.cs" />
+    <Compile Include="SharpTools\Types\Activities\Activity.cs" />
+    <Compile Include="SharpTools\Types\Activities\Task.cs" />
+    <Compile Include="SharpTools\Types\Consumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\ByteConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\CharConsumer.cs" />
     <Compile Include="SharpTools\Types\Consumers\DecimalConsumer.cs" />
     <Compile Include="SharpTools\Types\Consumers\DoubleConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\ExceptionConsumer.cs" />
     <Compile Include="SharpTools\Types\Consumers\FloatConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\LongConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\CharConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\ShortConsumer.cs" />
-    <Compile Include="SharpTools\Types\Consumers\ByteConsumer.cs" />
     <Compile Include="SharpTools\Types\Consumers\IntConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\LongConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\NothingConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\ObjectConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\ShortConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\StringConsumer.cs" />
+    <Compile Include="SharpTools\Types\Consumers\ViolationConsumer.cs" />
+    <Compile Include="SharpTools\Types\Containers\Either.cs" />
+    <Compile Include="SharpTools\Types\Containers\Option.cs" />
     <Compile Include="SharpTools\Types\Functions\Function0.cs" />
     <Compile Include="SharpTools\Types\Functions\Function1.cs" />
     <Compile Include="SharpTools\Types\Functions\Function2.cs" />
     <Compile Include="SharpTools\Types\Functions\Function3.cs" />
     <Compile Include="SharpTools\Types\Functions\Function4.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function5.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function6.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function7.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function8.cs" />
+    <Compile Include="SharpTools\Types\Functions\Function9.cs" />
+    <Compile Include="SharpTools\Types\Nothing.cs" />
     <Compile Include="SharpTools\Types\Supplier.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\IAcceptor.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\IPeeker.cs" />
-    <Compile Include="SharpTools\Types\Abstract\Interfaces\IGetter.cs" />
-    <Compile Include="Tests\Program.cs" />
-    <Compile Include="SharpTools\Types\Activities\Activity.cs" />
-    <Compile Include="SharpTools\Types\Activities\Task.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\ByteSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\CharConsumer.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\DecimalSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\DoubleSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\ExceptionConsumer.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\FloatSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\IntSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\LongSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\NothingSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\ObjectSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\ShortSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\StringSupplier.cs" />
+    <Compile Include="SharpTools\Types\Suppliers\ViolationSupplier.cs" />
     <Compile Include="SharpTools\Types\User.cs" />
-    <Compile Include="SharpTools\Types\Containers\Either.cs" />
-    <Compile Include="SharpTools\Types\Containers\Option.cs" />
-    <Compile Include="SharpTools\Helpers\Violation.cs" />
-    <Compile Include="Tests\Tasks\Duplicate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.13.3\build\NUnit.props'))" />
+    <Error Condition="!Exists('packages\NUnit3TestAdapter.4.4.2\build\net462\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit3TestAdapter.4.4.2\build\net462\NUnit3TestAdapter.props'))" />
+  </Target>
 </Project>

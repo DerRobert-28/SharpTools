@@ -2,7 +2,7 @@
 
 	public class IntSupplier: Supplier<int> {
 
-		public static IntSupplier of(Supplier<int> supplier)
+		public static new IntSupplier of(Supplier<int> supplier)
 			=> new IntSupplier(supplier);
 		
 		private IntSupplier(Supplier<int> supplier):

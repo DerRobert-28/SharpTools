@@ -2,7 +2,7 @@
 
 	public class FloatConsumer: Consumer<float> {
 
-		public static FloatConsumer of(Consumer<float> function)
+		public static new FloatConsumer of(Consumer<float> function)
 			=> new FloatConsumer(function);
 		
 		private FloatConsumer(Consumer<float> function):

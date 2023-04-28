@@ -1,3 +1,13 @@
-**/.suo
+
+**/*.suo
 **/*.testlog
 **/*.vsidx
+**/*.zip
+**/*.dll
+*.suo
+**/.suo
+*.dll
+*.testlog
+*.vsidx
+*.zip
+.suo

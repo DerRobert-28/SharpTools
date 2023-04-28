@@ -2,7 +2,7 @@
 
 	public class DoubleConsumer: Consumer<double> {
 
-		public static DoubleConsumer of(Consumer<double> function)
+		public static new DoubleConsumer of(Consumer<double> function)
 			=> new DoubleConsumer(function);
 		
 		private DoubleConsumer(Consumer<double> function):

@@ -4,7 +4,7 @@ namespace DerRobert28.SharpTools.Helpers {
 
 	public sealed class Violation: Exception {
 
-		protected readonly string message;
+		private readonly string message;
 
 		public static Violation ofCustom(string message)
 			=> new Violation(message);
@@ -23,7 +23,7 @@ namespace DerRobert28.SharpTools.Helpers {
 
 		private Violation(string message) {
 			this.message = message;
-			Exception e;
+			//Exception e;
 		}
 
 	}

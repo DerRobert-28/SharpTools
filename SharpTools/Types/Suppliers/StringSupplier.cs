@@ -2,7 +2,7 @@
 
 	public class StringSupplier: Supplier<string> {
 
-		public static StringSupplier of(Supplier<string> supplier)
+		public static new StringSupplier of(Supplier<string> supplier)
 			=> new StringSupplier(supplier);
 		
 		private StringSupplier(Supplier<string> supplier):

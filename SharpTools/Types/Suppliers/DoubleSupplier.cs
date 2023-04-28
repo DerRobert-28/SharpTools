@@ -2,7 +2,7 @@
 
 	public class DoubleSupplier: Supplier<double> {
 
-		public static DoubleSupplier of(Supplier<double> supplier)
+		public static new DoubleSupplier of(Supplier<double> supplier)
 			=> new DoubleSupplier(supplier);
 		
 		private DoubleSupplier(Supplier<double> supplier):

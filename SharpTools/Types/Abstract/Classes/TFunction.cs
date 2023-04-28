@@ -10,7 +10,7 @@ namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 		public int getArity()
 			=> arity;
 
-		public virtual C apply()
+		public C apply()
 			=> Caster<C>.of(this);
 		
 		protected TFunction(int arity)

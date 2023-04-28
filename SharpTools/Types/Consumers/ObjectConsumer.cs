@@ -2,7 +2,7 @@
 
 	public class ObjectConsumer: Consumer<object> {
 
-		public static ObjectConsumer of(Consumer<object> function)
+		public static new ObjectConsumer of(Consumer<object> function)
 			=> new ObjectConsumer(function);
 		
 		private ObjectConsumer(Consumer<object> function):

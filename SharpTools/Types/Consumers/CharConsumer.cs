@@ -2,7 +2,7 @@
 
 	public class CharConsumer: Consumer<char> {
 
-		public static CharConsumer of(Consumer<char> function)
+		public static new CharConsumer of(Consumer<char> function)
 			=> new CharConsumer(function);
 		
 		private CharConsumer(Consumer<char> function):

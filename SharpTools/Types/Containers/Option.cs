@@ -11,8 +11,8 @@ namespace DerRobert28.SharpTools.Types.Containers {
 		
 		public static Option<T> of(T value) => new Option<T>(value);
 		
-		public Option<R> map<R>(Function1<T, R> mapper)
-			=> Caster<Option<R>>.of(base.map<R>(mapper));
+		public new Option<R> map<R>(Function1<T, R> mapper)
+			=> Caster<Option<R>>.of(base.map(mapper));
 
 		private Option(): base() {}
 		private Option(T value): base(value) {}

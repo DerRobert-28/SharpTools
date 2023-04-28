@@ -1,5 +1,4 @@
 ﻿using DerRobert28.SharpTools.Types.Abstract.Classes;
-using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 using System;
 
 namespace DerRobert28.SharpTools.Types {
