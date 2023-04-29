@@ -13,21 +13,33 @@ namespace DerRobert28.Tests.SharpTools {
 			//
 			//	Arrange:
 			//
-			Func<int> receiveOne = () => 1;
-			Func<int> receiveTwo = () => 2;
-			Func<int> receiveThree = () => 3;
+			const int EXPECTED_NUMBER = 12;
+			Func<int> receiveNumber = () => EXPECTED_NUMBER;
 			//
 			//	Act:
 			//
-			var oneSupplier = Supplier<int>.of(receiveOne);
-			var twoSupplier = Supplier<int>.of(receiveTwo);
-			var threeSupplier = Supplier<int>.of(receiveThree);
+			var actualSupplier = Supplier<int>.of(receiveNumber);
 			//
 			//	Assert:
 			//
-			Assert.AreEqual(oneSupplier.get(), 1);
-			Assert.AreEqual(twoSupplier.get(), 2);
-			Assert.AreEqual(threeSupplier.get(), 3);
+			Assert.AreEqual(EXPECTED_NUMBER, actualSupplier.get());
+		}
+
+		[Test]
+		public void SupplierOfSupplierTest() {
+			//
+			//	Arrange:
+			//
+			const int EXPECTED_NUMBER = 34;
+			var numberSupplier = Supplier<int>.of(() => EXPECTED_NUMBER);
+			//
+			//	Act:
+			//
+			var actualResult = numberSupplier.get();
+			//
+			//	Assert:
+			//
+			Assert.AreEqual(EXPECTED_NUMBER, actualResult);
 		}
 
 	}

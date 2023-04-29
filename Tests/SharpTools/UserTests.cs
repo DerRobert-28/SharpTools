@@ -12,15 +12,15 @@ namespace DerRobert28.Tests.SharpTools {
 			//
 			//	Arrange:
 			//
-			const string expectedName = "Test User";
+			const string EXPECTED_NAME = "Test User";
 			//
 			//	Act:
 			//
-			var testUser = User.named(expectedName);
+			var actualUser = User.named(EXPECTED_NAME);
 			//
 			//	Assert:
 			//
-			Assert.AreEqual(testUser.getName(), expectedName);
+			Assert.AreEqual(EXPECTED_NAME, actualUser.getName());
 		}
 
         [Test]
@@ -28,16 +28,16 @@ namespace DerRobert28.Tests.SharpTools {
 			//
 			//	Arrange:
 			//
-			const string actualName = "Actual Name";
-			const string unexpectedName = "Unexpected Name";
+			const string UNEXPECTED_NAME = "Unexpected Name";
+			const string ACTUAL_NAME = "Actual Name";
 			//
 			//	Act:
 			//
-			var testUser = User.named(actualName);
+			var actualUser = User.named(ACTUAL_NAME);
 			//
 			//	Assert:
 			//
-			Assert.AreNotEqual(testUser.getName(), unexpectedName);
+			Assert.AreNotEqual(UNEXPECTED_NAME, actualUser.getName());
 		}
 
 	}
