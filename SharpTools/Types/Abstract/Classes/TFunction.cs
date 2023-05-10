@@ -1,5 +1,7 @@
 ﻿using DerRobert28.SharpTools.Helpers;
 using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+using DerRobert28.SharpTools.Types.Functions;
+using System;
 
 namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
@@ -12,7 +14,7 @@ namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 		public C apply()
 			=> Caster<C>.of(this);
-		
+
 		protected TFunction(int arity)
 			=> this.arity = arity;
 

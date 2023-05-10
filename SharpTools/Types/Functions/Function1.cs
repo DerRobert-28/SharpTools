@@ -13,6 +13,10 @@ namespace DerRobert28.SharpTools.Types.Functions {
 		public R apply(T value)
 			=> function.Invoke(value);
 
+		public static Function1<T, T> identity() {
+			return Function1<T, T>.of(x => x);
+		}
+
 		public static implicit operator Function1<T, R>
 			(Func<T, R> function) => of(function);
 
