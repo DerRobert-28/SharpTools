@@ -1,13 +1,15 @@
-﻿using System;
+﻿namespace DerRobert28.SharpTools.Helpers
+{
+	using System;
 
-namespace DerRobert28.SharpTools.Helpers {
-
-	public sealed class Violation: Exception {
-
+	public sealed class Violation: Exception
+	{
 		private readonly string message;
 
-		public static Violation ofCustom(string message)
-			=> new Violation(message);
+		public static Violation ofCustom(string message) => new Violation(message);
+
+		public static readonly Exception MissingConsumer =
+			new NullReferenceException("Consumer should not be NULL");
 
 		public static readonly Exception MissingMapper =
 			new NullReferenceException("Mapper should not be NULL");
@@ -18,14 +20,11 @@ namespace DerRobert28.SharpTools.Helpers {
 		public static readonly Exception MissingGetLeftValue =
 			new InvalidOperationException("getLeft() called with no left value present");
 
-		public string getMessage()
-			=> message;
+		public string getMessage() => message;
 
-		private Violation(string message) {
+		private Violation(string message)
+		{
 			this.message = message;
-			//Exception e;
 		}
-
 	}
-
 }

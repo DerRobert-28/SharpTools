@@ -1,35 +1,34 @@
-﻿using DerRobert28.SharpTools.Helpers;
-using DerRobert28.SharpTools.Types.Abstract.Interfaces;
-using DerRobert28.SharpTools.Types.Containers;
-using DerRobert28.SharpTools.Types.Functions;
-using System;
+﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes
+{
+	using DerRobert28.SharpTools.Helpers;
+	using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+	using DerRobert28.SharpTools.Types.Functions;
 
-namespace DerRobert28.SharpTools.Types.Abstract.Classes {
-
-	public abstract class TOptional<C, T>: IOptional<C, T> {
-
+	public abstract class TOptional<C, T>: TAssertions, IOptional<C, T>
+	{
 		protected readonly bool hasValue;
 		protected readonly T value;
 
-		public bool isDefined()
-			=> hasValue;
+		public bool isDefined() => hasValue;
 
-		public T get() {
-			if(!hasValue) {
-				throw Violation.MissingGetValue;
-			}
+		public T get()
+		{
+			assertHavingValue(this);
 			return value;
 		}
 
-		public object map<R>(Function1<T, R> mapper) {
-			if(mapper == null) {
-				throw Violation.MissingMapper;
-			}
+		public object map<R>(Function1<T, R> mapper)
+		{
+			assertMapperNotNull(mapper);
 			return mapper.apply(value);
 		}
 
-		public C peek(IAcceptor<T> consumer) {
-			if(hasValue) {
+		public C peek(IAcceptor<T> consumer)
+		{
+			assertConsumerNotNull(consumer);
+
+			if(hasValue)
+			{
 				consumer.accept(value);
 			}
 			return Caster<C>.of(this);
@@ -37,11 +36,10 @@ namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
 		protected TOptional() => hasValue = false;
 
-		protected TOptional(T value) {
+		protected TOptional(T value)
+		{
 			this.value = value;
 			this.hasValue = true;
 		}
-
 	}
-
 }

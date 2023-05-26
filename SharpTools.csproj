@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharpTools\Types\Abstract\Classes\TAssertions.cs" />
     <Compile Include="SharpTools\Helpers\Caster.cs" />
     <Compile Include="SharpTools\Helpers\Mappers.cs" />
     <Compile Include="SharpTools\Helpers\Violation.cs" />

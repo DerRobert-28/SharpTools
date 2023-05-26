@@ -2,13 +2,17 @@
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
-namespace DerRobert28.Tests.SharpTools {
- 
+
+namespace DerRobert28.Tests.SharpTools
+{
+
 	[TestFixture]
-	public class UserTests {
+	public class UserTests
+	{
 
         [Test]
-		public void UserNamedTest() {
+		public void UserNamedTest()
+		{
 			//
 			//	Arrange:
 			//
