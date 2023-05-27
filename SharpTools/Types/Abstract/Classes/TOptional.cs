@@ -1,45 +1,44 @@
-﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes
-{
-	using DerRobert28.SharpTools.Helpers;
-	using DerRobert28.SharpTools.Types.Abstract.Interfaces;
-	using DerRobert28.SharpTools.Types.Functions;
+﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
-	public abstract class TOptional<C, T>: TAssertions, IOptional<C, T>
-	{
-		protected readonly bool hasValue;
-		protected readonly T value;
+using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+using DerRobert28.SharpTools.Types.Functions;
 
-		public bool isDefined() => hasValue;
 
-		public T get()
-		{
-			assertHavingValue(this);
-			return value;
-		}
+public abstract class TOptional<C, T>: TAssertions, IOptional<C, T> {
 
-		public object map<R>(Function1<T, R> mapper)
-		{
-			assertMapperNotNull(mapper);
-			return mapper.apply(value);
-		}
+	protected readonly bool hasValue;
+	protected readonly T value;
 
-		public C peek(IAcceptor<T> consumer)
-		{
-			assertConsumerNotNull(consumer);
+	public bool isDefined() => hasValue;
 
-			if(hasValue)
-			{
-				consumer.accept(value);
-			}
-			return Caster<C>.of(this);
-		}
+	public bool isUndefined() => !hasValue;
 
-		protected TOptional() => hasValue = false;
-
-		protected TOptional(T value)
-		{
-			this.value = value;
-			this.hasValue = true;
-		}
+	public T get() {
+		assertHavingValue(this);
+		return value;
 	}
-}
+
+	public object map<R>(Function1<T, R> mapper) {
+		assertMapperNotNull(mapper);
+		return mapper.apply(value);
+	}
+
+	public C peek(IAcceptor<T> consumer) {
+		assertConsumerNotNull(consumer);
+		if(hasValue) {
+			consumer.accept(value);
+		}
+		return Caster<C>.of(this);
+	}
+
+	protected TOptional()
+		=> hasValue = false;
+
+	protected TOptional(T value) {
+		assertObjectNotNull(value);
+		this.value = value;
+		hasValue = true;
+	}
+
+}}
