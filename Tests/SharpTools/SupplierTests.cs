@@ -5,7 +5,7 @@ using NUnit.Framework;
 using NUnit.Framework.Internal;
 using System;
 
- 
+
 [TestFixture]
 public class SupplierTests {
 
