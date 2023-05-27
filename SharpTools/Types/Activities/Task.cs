@@ -1,22 +1,21 @@
-﻿using DerRobert28.SharpTools.Helpers;
+﻿namespace DerRobert28.SharpTools.Types.Activities {
+
+using DerRobert28.SharpTools.Helpers;
+using DerRobert28.SharpTools.Types.Abstract.Classes;
 using DerRobert28.SharpTools.Types.Containers;
-using System;
 
 
-namespace DerRobert28.SharpTools.Types.Activities {
+public abstract class Task<T, R>: TAssertions, Activity<T, R> {
 
-	public abstract class Task<T, R>: Activity<T, R> {
+	private string name;
 
-		private string name;
+	public abstract Either<Violation, R> performAs(User user, T value);
 
-		public abstract Either<Violation, R> performAs(User user, T value);
+	public string getTaskName() => name;
 
-		public string getTaskName()
-			=> name;
-
-		protected Task(string name)
-			=> this.name = name;
-	
+	protected Task(string name) {
+		assertStringNotNullOrEmpty(name);
+		this.name = name;
 	}
 
-}
+}}

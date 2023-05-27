@@ -1,21 +1,20 @@
-﻿using DerRobert28.SharpTools.Types.Abstract.Interfaces;
+﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
+
+using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 using System;
 
-namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
-	public abstract class TAcceptor<T>: IAcceptor<T> {
-		
-		protected readonly Action<T> function;
+public abstract class TAcceptor<T>: TAssertions, IAcceptor<T> {
 
-		public IAcceptor<T> accept()
-			=> this;
+	protected readonly Action<T> function;
 
-		public void accept(T value)
-			=> function.Invoke(value);
+	public IAcceptor<T> accept() => this;
 
-		protected TAcceptor(Action<T> function)
-			=> this.function = function;
-	
+	public void accept(T value) => function.Invoke(value);
+
+	protected TAcceptor(Action<T> function) {
+		assertObjectNotNull(function);
+		this.function = function;
 	}
 
-}
+}}

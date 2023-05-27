@@ -1,24 +1,23 @@
-﻿using DerRobert28.SharpTools.Helpers;
+﻿namespace DerRobert28.SharpTools.Types.Abstract.Classes {
+
+using DerRobert28.SharpTools.Helpers;
 using DerRobert28.SharpTools.Types.Abstract.Interfaces;
 using System;
 
-namespace DerRobert28.SharpTools.Types.Abstract.Classes {
 
-	public abstract class TSupplier<C, T>: ISupplier<C, T> {
-		
-		protected readonly Func<T> function;
+public abstract class TSupplier<C, T>: TAssertions, ISupplier<C, T> {
 
-		public T get()
-			=> function.Invoke();
+	protected readonly Func<T> function;
 
-		public C peek(IAcceptor<T> consumer) {
-			consumer.accept(get());
-			return Caster<C>.of(this);
-		}
+	public T get() => function.Invoke();
 
-		protected TSupplier(Func<T> function)
-			=> this.function = function;
-	
+	public C peek(IAcceptor<T> consumer) {
+		assertConsumerNotNull(consumer);
+		consumer.accept(get());
+		return Caster<C>.of(this);
 	}
 
-}
+	protected TSupplier(Func<T> function)
+		=> this.function = function;
+
+}}
