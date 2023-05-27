@@ -1,13 +1,13 @@
 ﻿namespace DerRobert28.SharpTools.Types.Suppliers {
 
-	public class ShortSupplier: Supplier<short> {
+using DerRobert28.SharpTools.Types.Abstract.Classes;
 
-		public static ShortSupplier of(Supplier<short> supplier)
-			=> new ShortSupplier(supplier);
+
+public class ShortSupplier: TSupplier<ShortSupplier, short> {
+
+	public static ShortSupplier of(Supplier<short> supplier)
+		=> new ShortSupplier(supplier);
 		
-		private ShortSupplier(Supplier<short> supplier):
-			base(supplier) {}
+	private ShortSupplier(Supplier<short> supplier): base(supplier) {}
 
-	}
-
-}
+}}

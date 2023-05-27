@@ -1,16 +1,13 @@
-﻿using DerRobert28.SharpTools.Helpers;
-using System;
+﻿namespace DerRobert28.SharpTools.Types.Suppliers {
 
-namespace DerRobert28.SharpTools.Types.Suppliers {
+using DerRobert28.SharpTools.Helpers;
 
-	public class ViolationSupplier: Supplier<Violation> {
 
-		public static ViolationSupplier of(Supplier<Violation> supplier)
-			=> new ViolationSupplier(supplier);
+public class ViolationSupplier: Supplier<Violation> {
+	
+	public static new ViolationSupplier of(Supplier<Violation> supplier)
+		=> new ViolationSupplier(supplier);
 		
-		private ViolationSupplier(Supplier<Violation> supplier):
-			base(supplier) {}
+	private ViolationSupplier(Supplier<Violation> supplier): base(supplier) {}
 
-	}
-
-}
+}}

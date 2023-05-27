@@ -1,11 +1,10 @@
 ﻿namespace DerRobert28.SharpTools.Types.Abstract.Interfaces {
 
-	public interface IFunction<C, R> {
 
-		int getArity();
+public interface IFunction<C, R> {
 
-		C apply();
+	int getArity();
 
-	}
+	C apply();
 
-}
+}}

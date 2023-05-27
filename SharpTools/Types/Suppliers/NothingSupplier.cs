@@ -1,16 +1,11 @@
-﻿using DerRobert28.SharpTools.Helpers;
-using System;
+﻿namespace DerRobert28.SharpTools.Types.Suppliers {
 
-namespace DerRobert28.SharpTools.Types.Suppliers {
 
-	public class NothingSupplier: Supplier<Nothing> {
+public class NothingSupplier: Supplier<Nothing> {
 
-		public static NothingSupplier of(Supplier<Nothing> supplier)
-			=> new NothingSupplier(supplier);
+	public static new NothingSupplier of(Supplier<Nothing> supplier)
+		=> new NothingSupplier(supplier);
 		
-		private NothingSupplier(Supplier<Nothing> supplier):
-			base(supplier) {}
+	private NothingSupplier(Supplier<Nothing> supplier): base(supplier) {}
 
-	}
-
-}
+}}
