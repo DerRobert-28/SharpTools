@@ -18,3 +18,5 @@
 *.vsidx
 *.zip
 .suo
+obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+.vs/SharpTools/v17/.suo
